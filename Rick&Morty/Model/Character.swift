@@ -63,6 +63,7 @@ enum CharStatus: String, Codable, CaseIterable{
   case alive = "Alive"
   case dead = "Dead"
   case unknown
+  static let allCases: [CharStatus] = [.alive, .dead]
 }
 
 // MARK: - CharGender

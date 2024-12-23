@@ -1,7 +1,7 @@
 import SwiftUI
 import DesignSystem
 
-struct GenderSortButtons: View {
+struct SpeciesSortButtons: View {
     var vm: CharactersViewModel
   
   enum Species: String, CaseIterable {
@@ -29,5 +29,5 @@ struct GenderSortButtons: View {
 }
 
 #Preview {
-  GenderSortButtons(CharactersViewModel())
+  SpeciesSortButtons(CharactersViewModel())
 }

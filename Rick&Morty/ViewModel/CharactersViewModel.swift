@@ -5,7 +5,7 @@ import Observation
   var characters: [Character] = []
   var charactersIsLoaded = false
   var isUnnownError = false
-  var status = ""
+  var status: CharStatus = .alive
   var species = ""
   var name = ""
   var nothingHere = false
@@ -80,9 +80,7 @@ import Observation
         parameters["page"] = "\(page)"
     }
     
-    if !status.isEmpty {
-      parameters["status"] = status.lowercased()
-    }
+    parameters["status"] = status.rawValue.lowercased()
 
     if !name.isEmpty {
         parameters["name"] = name

@@ -20,7 +20,6 @@ struct Components {
           
           Text(character.status.rawValue)
             .font(.DesignFonts.semibold())
-            .foregroundStyle(.white)
         }
         
         CharacterPlanetInfo(type: .lastKnown,
@@ -32,6 +31,7 @@ struct Components {
                             colorScheme: planetColorShame)
         
       }
+      .foregroundStyle(.white)
     }
   }
   

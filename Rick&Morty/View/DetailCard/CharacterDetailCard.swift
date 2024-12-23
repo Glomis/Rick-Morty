@@ -27,7 +27,7 @@ struct CharacterDetailCard: View {
           Components.CharactesInfoView(character: character,
                                        planetColorShame: .white)
           
-          Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum aliquam libero, vitae eleifend odio auctor quis. Quisque consequat convallis felis. Vivamus sodales luctus porttitor.")
+          Text(description)
             .font(.DesignFonts.regular())
             .multilineTextAlignment(.leading)
             .foregroundStyle(.white)
@@ -42,6 +42,8 @@ struct CharacterDetailCard: View {
       await character.getImage()
     }
   }
+  
+  let description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum aliquam libero, vitae eleifend odio auctor quis. Quisque consequat convallis felis. Vivamus sodales luctus porttitor. Nulla lacinia dapibus lectus sed commodo. Duis faucibus at tortor ut tincidunt. Aliquam nibh purus, imperdiet eget gravida non, scelerisque nec dolor. Donec facilisis neque vel ipsum malesuada venenatis. Proin vel lectus maximus, viverra turpis in, scelerisque dui. Duis at elit felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec sapien ante. Duis ac odio id nibh laoreet mattis. Pellentesque id ultrices lacus. Aenean ac rutrum est, hendrerit varius purus."
 }
 
 #Preview {

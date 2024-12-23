@@ -9,7 +9,12 @@ struct DropdownComponent: ViewModifier {
     VStack(alignment: .leading, spacing: 12) {
       HStack {
         content
-        Spacer()
+          .frame(maxWidth: .infinity, alignment: .leading)
+          .background {
+            Color.lightGray
+              .opacity(0.01)
+          }
+        
         Image(systemName: "control")
           .foregroundStyle(.gray)
           .rotationEffect(Angle(degrees: isOpened ? 180 : 0))

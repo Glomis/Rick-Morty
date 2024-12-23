@@ -20,7 +20,9 @@ struct MainScreen: View {
           
           ScrollableEpisodes()
           
-          GenderSortButtons(vm)
+          StatusSlider(vm: vm)
+          
+          SpeciesSortButtons(vm)
           
           Components.CharacterPlanetInfo(type: .lastKnown,
                                          detailText: "Nuptia 4",
