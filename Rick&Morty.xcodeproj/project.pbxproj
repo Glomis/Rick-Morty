@@ -42,6 +42,7 @@
 		FD3325CA2D18FC5C00EE38E7 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
 		FD3325CC2D1919B000EE38E7 /* ScrollableEpisodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableEpisodes.swift; sourceTree = "<group>"; };
 		FD3325CF2D19218100EE38E7 /* StatusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusSlider.swift; sourceTree = "<group>"; };
+		FD3326092D192CF200EE38E7 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystem; path = ../../DesignSystem; sourceTree = "<group>"; };
 		FD41EE142D15FE510021923B /* Rick&Morty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Rick&Morty.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FD41EE172D15FE510021923B /* Rick_MortyApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rick_MortyApp.swift; sourceTree = "<group>"; };
 		FD41EE1B2D15FE540021923B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -56,7 +57,6 @@
 		FD66EB022D176BE3004C7160 /* CharacterDetailCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetailCard.swift; sourceTree = "<group>"; };
 		FD66EB042D182F0C004C7160 /* SheetDownWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SheetDownWrapper.swift; sourceTree = "<group>"; };
 		FD66EB0A2D1848D9004C7160 /* Launch.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Launch.storyboard; sourceTree = "<group>"; };
-		FD66EB192D189E82004C7160 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystem; path = ../DesignSystem; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 		FD41EE0B2D15FE510021923B = {
 			isa = PBXGroup;
 			children = (
-				FD66EB192D189E82004C7160 /* DesignSystem */,
+				FD3326092D192CF200EE38E7 /* DesignSystem */,
 				FD41EE162D15FE510021923B /* Rick&Morty */,
 				FD41EE152D15FE510021923B /* Products */,
 				FD66EB152D1893BC004C7160 /* Frameworks */,

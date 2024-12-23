@@ -54,7 +54,7 @@ import Observation
         }
         charactersIsLoaded = true
         page += 1
-    } catch let error as APIError {
+    } catch _ as APIError {
       nothingHere = true
       charShameResource = nil
       page = 1
