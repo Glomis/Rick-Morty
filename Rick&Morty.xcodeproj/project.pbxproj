@@ -3,11 +3,10 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		FD3325BD2D18ABA700EE38E7 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = FD3325BC2D18ABA700EE38E7 /* DesignSystem */; };
 		FD3325BF2D18CA8C00EE38E7 /* SerchField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3325BE2D18CA8C00EE38E7 /* SerchField.swift */; };
 		FD3325C12D18D71E00EE38E7 /* SpeciesSortButtons.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3325C02D18D71E00EE38E7 /* SpeciesSortButtons.swift */; };
 		FD3325C32D18D7E000EE38E7 /* CharactersScroll.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3325C22D18D7E000EE38E7 /* CharactersScroll.swift */; };
@@ -20,6 +19,8 @@
 		FD3326142D194FD300EE38E7 /* CharacterShame.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3326132D194FD300EE38E7 /* CharacterShame.swift */; };
 		FD3326162D1955A900EE38E7 /* CharacterShameResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3326152D1955A900EE38E7 /* CharacterShameResource.swift */; };
 		FD3326182D19574B00EE38E7 /* Species.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3326172D19574B00EE38E7 /* Species.swift */; };
+		FD3326362D19659400EE38E7 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = FD3326352D19659400EE38E7 /* DesignSystem */; };
+		FD3326392D19667100EE38E7 /* DesignSystem in Frameworks */ = {isa = PBXBuildFile; productRef = FD3326382D19667100EE38E7 /* DesignSystem */; };
 		FD41EE182D15FE510021923B /* Rick_MortyApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD41EE172D15FE510021923B /* Rick_MortyApp.swift */; };
 		FD41EE1C2D15FE540021923B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD41EE1B2D15FE540021923B /* Assets.xcassets */; };
 		FD41EE1F2D15FE540021923B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FD41EE1E2D15FE540021923B /* Preview Assets.xcassets */; };
@@ -44,7 +45,6 @@
 		FD3325CA2D18FC5C00EE38E7 /* ImageRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRequest.swift; sourceTree = "<group>"; };
 		FD3325CC2D1919B000EE38E7 /* ScrollableEpisodes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableEpisodes.swift; sourceTree = "<group>"; };
 		FD3325CF2D19218100EE38E7 /* StatusSlider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatusSlider.swift; sourceTree = "<group>"; };
-		FD3326092D192CF200EE38E7 /* DesignSystem */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = DesignSystem; path = ../../DesignSystem; sourceTree = "<group>"; };
 		FD33260A2D1932A300EE38E7 /* Rick-Morty-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Rick-Morty-Info.plist"; sourceTree = SOURCE_ROOT; };
 		FD3326132D194FD300EE38E7 /* CharacterShame.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterShame.swift; sourceTree = "<group>"; };
 		FD3326152D1955A900EE38E7 /* CharacterShameResource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CharacterShameResource.swift; path = ../../../../../../Documents/CharacterShameResource.swift; sourceTree = "<group>"; };
@@ -69,7 +69,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FD3325BD2D18ABA700EE38E7 /* DesignSystem in Frameworks */,
+				FD3326362D19659400EE38E7 /* DesignSystem in Frameworks */,
+				FD3326392D19667100EE38E7 /* DesignSystem in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -119,7 +120,6 @@
 		FD41EE0B2D15FE510021923B = {
 			isa = PBXGroup;
 			children = (
-				FD3326092D192CF200EE38E7 /* DesignSystem */,
 				FD41EE162D15FE510021923B /* Rick&Morty */,
 				FD41EE152D15FE510021923B /* Products */,
 				FD66EB152D1893BC004C7160 /* Frameworks */,
@@ -246,7 +246,8 @@
 			);
 			name = "Rick&Morty";
 			packageProductDependencies = (
-				FD3325BC2D18ABA700EE38E7 /* DesignSystem */,
+				FD3326352D19659400EE38E7 /* DesignSystem */,
+				FD3326382D19667100EE38E7 /* DesignSystem */,
 			);
 			productName = "Rick&Morty";
 			productReference = FD41EE142D15FE510021923B /* Rick&Morty.app */;
@@ -277,6 +278,7 @@
 			);
 			mainGroup = FD41EE0B2D15FE510021923B;
 			packageReferences = (
+				FD3326372D19667100EE38E7 /* XCLocalSwiftPackageReference "DesignSystem" */,
 			);
 			productRefGroup = FD41EE152D15FE510021923B /* Products */;
 			projectDirPath = "";
@@ -542,8 +544,19 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		FD3326372D19667100EE38E7 /* XCLocalSwiftPackageReference "DesignSystem" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = DesignSystem;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
-		FD3325BC2D18ABA700EE38E7 /* DesignSystem */ = {
+		FD3326352D19659400EE38E7 /* DesignSystem */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = DesignSystem;
+		};
+		FD3326382D19667100EE38E7 /* DesignSystem */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = DesignSystem;
 		};
