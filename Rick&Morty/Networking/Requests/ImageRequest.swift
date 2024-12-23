@@ -1,5 +1,6 @@
 import Foundation
 
+  // Запрос на получаение картинки
 class ImageRequest {
     let url: URL
     
@@ -8,6 +9,7 @@ class ImageRequest {
     }
 }
 
+// Изменяем декодируемые данные на Дату, чтобы преобразовать ее в изображение
 extension ImageRequest: NetworkRequest {
     func decode(_ data: Data) -> Data? {
         return data

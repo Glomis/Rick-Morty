@@ -4,12 +4,14 @@ import DesignSystem
 struct CharCard: View {
   var char: Character
   @State private var infoIsShown = false
+  private let imageHeight: CGFloat = 160
   
   var body: some View {
     VStack(alignment: .leading) {
       CharacterImage()
       
       VStack(alignment: .leading, spacing: 8) {
+        //По тапу на имя открывается доп инфо, по наджатию в любое другое место - переход
         Text(char.name)
           .font(.DesignFonts.title())
           .multilineTextAlignment(.leading)
@@ -18,13 +20,15 @@ struct CharCard: View {
         Components.CharactesInfoView(character: char,
                                      planetColorShame: .grayWhite)
         
+        // Поле скрывается с нарядной анимацией для каждой отдельной карточки
         if infoIsShown {
-          Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum aliquam libero, vitae eleifend odio auctor quis. Quisque consequat convallis felis. Vivamus sodales luctus porttitor.")
+          Text(detailInfoText)
             .font(.DesignFonts.regular())
             .multilineTextAlignment(.leading)
-            .transition(.blurReplace.combined(
-              with: .scale(0, anchor: .topLeading)
-            ))
+            .transition(
+              .blurReplace.combined(
+                with: .scale(0, anchor: .topLeading))
+            )
         }
       }
       .foregroundStyle(.white)
@@ -46,15 +50,18 @@ struct CharCard: View {
       Image(uiImage: UIImage(data: data)!)
         .resizable()
         .aspectRatio(1.5, contentMode: .fill)
-        .frame(maxHeight: 160)
+        .frame(maxHeight: imageHeight)
         .clipped()
     } else {
       ProgressView()
         .tint(.aliveColor)
-        .frame(height: 150)
+        .frame(height: imageHeight)
         .frame(maxWidth: .infinity, alignment: .center)
     }
   }
+  
+    // Заглушка, т.к нет информации из API
+  let detailInfoText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum aliquam libero, vitae eleifend odio auctor quis. Quisque consequat convallis felis. Vivamus sodales luctus porttitor."
 }
 
 #Preview {

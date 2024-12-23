@@ -13,6 +13,7 @@ struct CharacterDetailCard: View {
         .ignoresSafeArea()
       
       ScrollView(showsIndicators: false) {
+        // Благодар этому картинка растягивается вслед за скроллом
         GeometryReader { proxy in
           Image(uiImage: UIImage(data: character.imageData ?? Data()) ?? UIImage())
             .resizable()
@@ -43,6 +44,7 @@ struct CharacterDetailCard: View {
     }
   }
   
+  // Заглушка, т.к нет информации из API
   let description = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum aliquam libero, vitae eleifend odio auctor quis. Quisque consequat convallis felis. Vivamus sodales luctus porttitor. Nulla lacinia dapibus lectus sed commodo. Duis faucibus at tortor ut tincidunt. Aliquam nibh purus, imperdiet eget gravida non, scelerisque nec dolor. Donec facilisis neque vel ipsum malesuada venenatis. Proin vel lectus maximus, viverra turpis in, scelerisque dui. Duis at elit felis. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec sapien ante. Duis ac odio id nibh laoreet mattis. Pellentesque id ultrices lacus. Aenean ac rutrum est, hendrerit varius purus."
 }
 

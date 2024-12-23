@@ -6,10 +6,9 @@ struct MainScreen: View {
   @State private var isFirstOpened = false
   @State private var isOpened = false
   private let elements = ["All", "Get Schwifty",
-                  "Interdimensional Cable 2: Tempting Fate",
-                  "One Crew Over the Crewcoo's Morty"]
-  @State private var detail = "Nuptia 4"
-
+                          "Interdimensional Cable 2: Tempting Fate",
+                          "One Crew Over the Crewcoo's Morty"]
+  
   var body: some View {
     NavigationStack {
       ZStack {

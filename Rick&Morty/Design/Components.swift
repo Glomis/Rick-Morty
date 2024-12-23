@@ -4,6 +4,7 @@ import DesignSystem
 struct Components {
   
   //MARK: Повторяющееся поле для описания свойст персонажа
+  // Используется в каточке персонажа и на жкране подробной инфо
   struct CharactesInfoView: View {
     let character: Character
     let planetColorShame: CharacterPlanetInfo.ColorScheme
@@ -37,6 +38,7 @@ struct Components {
   
   
   //MARK: Поле описания локациий пользователя
+  // Стопка с описанием локации, используется с различными темами оформления в разных местах
   struct CharacterPlanetInfo: View {
     let type: InfoType
     let detailText: String
@@ -50,7 +52,8 @@ struct Components {
     enum ColorScheme {
       case white, whiteGreen, grayWhite
       
-      var titleColor: Color {
+      // Цвет типа локации
+      var locationYypeColor: Color {
         switch self {
         case .white:
             .white
@@ -61,7 +64,8 @@ struct Components {
         }
       }
       
-      var detailColor: Color {
+      // Цвет названия локации
+      var titlelColor: Color {
         switch self {
         case .white:
             .white
@@ -77,10 +81,10 @@ struct Components {
       VStack(alignment: .leading, spacing: 3) {
         Text(type.rawValue)
           .font(.DesignFonts.anotation())
-          .foregroundStyle(colorScheme.titleColor)
+          .foregroundStyle(colorScheme.locationYypeColor)
         Text(detailText)
           .font(.DesignFonts.semibold())
-          .foregroundStyle(colorScheme.detailColor)
+          .foregroundStyle(colorScheme.titlelColor)
       }
     }
   }

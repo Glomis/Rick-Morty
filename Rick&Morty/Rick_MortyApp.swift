@@ -20,7 +20,7 @@ extension Rick_MortyApp {
   func changeNavigationStyle() {
     let navigationBarAppearance = UINavigationBarAppearance()
     navigationBarAppearance.configureWithTransparentBackground()
-        
+    
     let backColor = UIColor(red: 39.0 / 255, green: 43.0 / 255, blue: 51.0 / 255, alpha: 1)
     navigationBarAppearance.shadowColor = backColor
     navigationBarAppearance.backgroundColor = backColor

@@ -19,12 +19,11 @@ struct SerchField: View {
           .scaleEffect(text.isEmpty ? 1 : 0.6, anchor: .leading)
           .offset(y: text.isEmpty ? 0 : -8)
         
+        // При наборе создает запрос с фильтром по имени
         TextField("", text: $text)
           .font(.DesignFonts.semibold())
           .onChange(of: text) { _, _ in
-            Task {
-              await vm.fetchNewCharacters()
-            }
+            Task { await vm.fetchNewCharacters() }
           }
           .foregroundStyle(Color.aliveColor)
           .padding(.vertical, 5)
