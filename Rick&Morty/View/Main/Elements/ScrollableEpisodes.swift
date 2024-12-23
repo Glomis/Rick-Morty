@@ -1,4 +1,5 @@
 import SwiftUI
+import DesignSystem
 
 struct ScrollableEpisodes: View {
   private let images = ["sroll1", "sroll2", "sroll3"]
@@ -15,12 +16,12 @@ struct ScrollableEpisodes: View {
           }
           .containerRelativeFrame(.horizontal,
                                   count: 1,
-                                  spacing: 0)
+                                  spacing: -10)
         }
       }
       .scrollTargetBehavior(.paging)
       .frame(height: 100)
-      .padding(.horizontal, -24)
+      .padding(.horizontal, -Paddings.mainPadding)
     }
 }
 

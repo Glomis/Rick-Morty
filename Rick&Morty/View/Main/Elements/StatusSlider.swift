@@ -30,6 +30,7 @@ struct StatusSlider: View {
           }
         }
         .foregroundColor(vm.status == status ? Color.backColor : Color.white)
+        // Можно вынести анимированый задний фон в Дизайн систему
       }
     }
     .modifier(SheetDownWrapper())

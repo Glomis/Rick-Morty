@@ -8,6 +8,7 @@ struct MainScreen: View {
   private let elements = ["All", "Get Schwifty",
                   "Interdimensional Cable 2: Tempting Fate",
                   "One Crew Over the Crewcoo's Morty"]
+  @State private var detail = "Nuptia 4"
 
   var body: some View {
     NavigationStack {
@@ -15,7 +16,7 @@ struct MainScreen: View {
         Color.backColor
           .ignoresSafeArea()
         
-        VStack(alignment: .leading, spacing: 24) {
+        VStack(alignment: .leading, spacing: Paddings.mainPadding) {
           SerchField(text: $vm.name, vm)
           
           ScrollableEpisodes()
@@ -38,7 +39,7 @@ struct MainScreen: View {
           
           CharactersScroll(vm)
         }
-        .padding(.horizontal, 24)
+        .padding(.horizontal, Paddings.mainPadding)
       }
       .navigationDestination(for: Character.self) { char in
         CharacterDetailCard(character: char)

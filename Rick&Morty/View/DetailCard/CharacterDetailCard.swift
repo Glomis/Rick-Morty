@@ -31,9 +31,9 @@ struct CharacterDetailCard: View {
             .font(.DesignFonts.regular())
             .multilineTextAlignment(.leading)
             .foregroundStyle(.white)
-            .padding(.top, 24)
+            .padding(.top, Paddings.mainPadding)
         }
-        .padding(24)
+        .padding(Paddings.mainPadding)
         .frame(maxWidth: .infinity, alignment: .leading)
       }
     }

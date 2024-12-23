@@ -10,6 +10,7 @@ struct SerchField: View {
     self.vm = vm
   }
   
+  //MARK: Кастомный TextField
   var body: some View {
     HStack {
       ZStack(alignment: .leading) {
@@ -20,11 +21,11 @@ struct SerchField: View {
         
         TextField("", text: $text)
           .font(.DesignFonts.semibold())
-          .onChange(of: text, { oldValue, newValue in
+          .onChange(of: text) { _, _ in
             Task {
               await vm.fetchNewCharacters()
             }
-          })
+          }
           .foregroundStyle(Color.aliveColor)
           .padding(.vertical, 5)
           .offset(y: text.isEmpty ? 0 : 5)

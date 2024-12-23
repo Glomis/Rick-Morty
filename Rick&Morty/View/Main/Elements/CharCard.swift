@@ -29,7 +29,7 @@ struct CharCard: View {
       }
       .foregroundStyle(.white)
       .frame(maxWidth: .infinity, alignment: .leading)
-      .padding([.bottom, .horizontal], 24)
+      .padding([.bottom, .horizontal], Paddings.mainPadding)
     }
     .background {
       Color.lightGray
