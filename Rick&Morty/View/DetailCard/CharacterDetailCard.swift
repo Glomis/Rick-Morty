@@ -38,6 +38,9 @@ struct CharacterDetailCard: View {
       }
     }
     .navigationTitle(character.name)
+    .task {
+      await character.getImage()
+    }
   }
 }
 

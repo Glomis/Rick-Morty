@@ -36,7 +36,7 @@ struct CharCard: View {
     }
     .clipShape(.rect(cornerRadius: 15))
     .task {
-      await self.getImage()
+      await char.getImage()
     }
   }
   
@@ -50,15 +50,10 @@ struct CharCard: View {
         .clipped()
     } else {
       ProgressView()
+        .tint(.aliveColor)
         .frame(height: 150)
+        .frame(maxWidth: .infinity, alignment: .center)
     }
-  }
-  
-  //MARK: Загрузка картинки
-  private func getImage() async {
-    guard char.imageData == nil else { return }
-    guard let url = URL(string: char.image) else { return}
-    char.imageData = try? await URLSession.shared.data(from: url).0
   }
 }
 

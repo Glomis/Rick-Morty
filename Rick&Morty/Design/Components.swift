@@ -1,35 +1,25 @@
 import SwiftUI
+import DesignSystem
+
 struct Components {
-  struct CustomButton: View {
-    var title: String
-    var action: () -> Void
-    
-    var body: some View {
-      Button(action: action) {
-        Text(title)
-          .font(.title2)
-          .padding(.vertical, 8.5)
-          .frame(maxWidth: .infinity)
-          .background {
-            Color.aliveColor
-          }
-          .clipShape(.rect(cornerRadius: 10))
-      }
-    }
-  }
   
+  //MARK: Повторяющееся поле для описания свойст персонажа
   struct CharactesInfoView: View {
     let character: Character
     let planetColorShame: CharacterPlanetInfo.ColorScheme
     
     var body: some View {
       VStack(alignment: .leading, spacing: 8) {
+        Text(character.species)
+          .font(.DesignFonts.semibold())
+        
         HStack(spacing: 5) {
           Circle()
             .fill(character.status == .alive ? Color.aliveColor : .deadColor)
             .frame(width: 5, height: 5)
           
           Text(character.status.rawValue)
+            .font(.DesignFonts.semibold())
             .foregroundStyle(.white)
         }
         
@@ -45,6 +35,8 @@ struct Components {
     }
   }
   
+  
+  //MARK: Поле описания локациий пользователя
   struct CharacterPlanetInfo: View {
     let type: InfoType
     let detailText: String
@@ -84,20 +76,14 @@ struct Components {
     var body: some View {
       VStack(alignment: .leading, spacing: 3) {
         Text(type.rawValue)
-          .font(.callout)
+          .font(.DesignFonts.anotation())
           .foregroundStyle(colorScheme.titleColor)
         Text(detailText)
-          .font(.headline)
+          .font(.DesignFonts.semibold())
           .foregroundStyle(colorScheme.detailColor)
       }
     }
-    
   }
 }
 
-struct LocationView: View {
-  var body: some View {
-    /*@START_MENU_TOKEN@*//*@PLACEHOLDER=Hello, world!@*/Text("Hello, world!")/*@END_MENU_TOKEN@*/
-  }
-}
 

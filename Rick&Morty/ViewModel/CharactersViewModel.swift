@@ -3,8 +3,12 @@ import Observation
 
 @Observable class CharactersViewModel {
   var characters: [Character] = []
-  var status: String = ""
+  var charactersIsLoaded = false
+  var isUnnownError = false
+  var status = ""
+  var species = ""
   var name = ""
+  var nothingHere = false
   @ObservationIgnored
   var charShameResource: CharacterShameResource.ModelType?
   var page = 1
@@ -21,22 +25,20 @@ import Observation
     await updateCharacters(replaceExisting: true)
   }
   
+  @MainActor
   private func updateCharacters(replaceExisting: Bool) async {
     if !replaceExisting {
-        // Проверяем, есть ли ещё страницы
         guard page < charShameResource?.info.pages ?? 2 else {
             return print("No pages anymore")
         }
     } else {
-        // Сбрасываем данные для нового запроса
-        charShameResource = nil
-        page = 1
+      nothingHere = false
+      charShameResource = nil
+      page = 1
     }
     
     let params = buildQueryParameters()
-    print(params)
     let resource = CharacterShameResource(filters: params)
-    
     do {
         let request = APIRequest(resource: resource)
         let fetchedCharacterShame = try await request.execute()
@@ -50,19 +52,29 @@ import Observation
             // Добавляем новые данные к массиву
             characters.append(contentsOf: fetchedCharacterShame.results)
         }
-        
-        print("Char count = \(characters.count)")
+        charactersIsLoaded = true
         page += 1
+    } catch let error as APIError {
+      nothingHere = true
+      charShameResource = nil
+      page = 1
+      characters = []
     } catch {
       characters = []
       charShameResource = nil
       page = 1
-        print("DEBUG: ERROR - \(error)")
+      isUnnownError = true
+      charactersIsLoaded = true
     }
 }
   
+  @MainActor
   private func buildQueryParameters() -> [String: String] {
     var parameters: [String: String] = [:]
+    
+    if !species.isEmpty {
+      parameters["species"] = species.lowercased()
+    }
     
     if page > 1 {
         parameters["page"] = "\(page)"
@@ -71,7 +83,6 @@ import Observation
     if !status.isEmpty {
       parameters["status"] = status.lowercased()
     }
-//    parameters["specie"] = specie.lowercased()
 
     if !name.isEmpty {
         parameters["name"] = name

@@ -30,5 +30,5 @@ struct CharactersScroll: View {
 }
 
 #Preview {
-    CharactersScroll(CharactersViewModel())
+  CharactersScroll(CharactersViewModel())
 }

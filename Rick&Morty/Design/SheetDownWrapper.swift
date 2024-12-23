@@ -1,16 +1,5 @@
 import SwiftUI
 
-struct SheetDownWrapper: ViewModifier {
-  func body(content: Content) -> some View {
-    content
-      .padding(.horizontal, 17)
-      .padding(.vertical, 10)
-      .frame(maxWidth: .infinity, alignment: .leading)
-      .background { Color.lightGray }
-      .clipShape(.rect(cornerRadius: 15))
-  }
-}
-
 struct DropdownComponent: ViewModifier {
   @Binding var isOpened: Bool
   var droppedElements: [String]?
@@ -33,9 +22,9 @@ struct DropdownComponent: ViewModifier {
       if let droppedElements, isOpened {
         VStack(alignment: .leading, spacing: 12) {
           ForEach(droppedElements, id: \.self) { element in
-            Button(action: {(selectionAction!)()}, label: {
+            Button(action: {(selectionAction)?()}, label: {
               Text(element)
-                .font(.headline)
+                .font(.DesignFonts.semibold())
                 .foregroundStyle(.white)
             })
           }
