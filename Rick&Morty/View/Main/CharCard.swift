@@ -1,6 +1,7 @@
 import SwiftUI
+import DesignSystem
 
-struct CharCell: View {
+struct CharCard: View {
   var char: Character
   @State private var infoIsShown = false
   
@@ -10,7 +11,8 @@ struct CharCell: View {
       
       VStack(alignment: .leading, spacing: 8) {
         Text(char.name)
-          .font(.title)
+          .font(.DesignFonts.title())
+          .multilineTextAlignment(.leading)
           .modifier(DropdownComponent(isOpened: $infoIsShown))
         
         Components.CharactesInfoView(character: char,
@@ -18,6 +20,7 @@ struct CharCell: View {
         
         if infoIsShown {
           Text("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum dictum aliquam libero, vitae eleifend odio auctor quis. Quisque consequat convallis felis. Vivamus sodales luctus porttitor.")
+            .font(.DesignFonts.regular())
             .multilineTextAlignment(.leading)
             .transition(.blurReplace.combined(
               with: .scale(0, anchor: .topLeading)
@@ -60,6 +63,6 @@ struct CharCell: View {
 }
 
 #Preview {
-  CharCell(char: Character.Moc)
+  CharCard(char: Character.Moc)
     .padding()
 }
